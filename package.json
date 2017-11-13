@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "ngc": "ngc -p src/tsconfig.app.json",
-    "rollup": "rollup -c rollup-temperature.config.js"
+    "rollup": "rollup -c rollup-temperature.config.js && rollup -c rollup-separator.config.js"
   },
   "private": true,
   "dependencies": {

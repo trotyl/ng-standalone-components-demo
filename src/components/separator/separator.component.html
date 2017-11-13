@@ -1,0 +1,7 @@
+<p>Text:</p>
+<input type="text" [(ngModel)]="text">
+<hr>
+<p>List:</p>
+<ul>
+  <li *ngFor="let item of list trackBy trackByIndex">{{ item }}</li>
+</ul>
