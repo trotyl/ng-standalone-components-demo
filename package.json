@@ -4,13 +4,17 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "http-server ./dist",
     "build": "npm run ngc && npm run rollup",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "deploy": "gh-pages -d dist",
+    "prengc": "rm -rf out-tsc",
     "ngc": "ngc -p src/tsconfig.app.json",
-    "rollup": "rollup -c rollup-temperature.config.js && rollup -c rollup-separator.config.js"
+    "prerollup": "rm -rf dist",
+    "rollup": "rollup -c rollup-temperature.config.js && rollup -c rollup-separator.config.js",
+    "postrollup": "cp src/*.html dist/"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +35,8 @@
     "@angular/cli": "1.5.0",
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",
+    "gh-pages": "^1.0.0",
+    "http-server": "^0.10.0",
     "rollup": "^0.51.5",
     "rollup-plugin-angular-optimizer": "^0.2.0",
     "rollup-plugin-commonjs": "^8.2.6",
