@@ -5,10 +5,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run ngc && npm run rollup",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ngc": "ngc -p src/tsconfig.app.json",
+    "rollup": "rollup -c rollup-temperature.config.js"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +31,12 @@
     "@angular/cli": "1.5.0",
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",
+    "rollup": "^0.51.5",
+    "rollup-plugin-angular-optimizer": "^0.2.0",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-uglify": "^2.0.1",
     "typescript": "~2.4.2"
   }
 }
